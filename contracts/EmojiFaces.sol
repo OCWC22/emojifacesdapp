@@ -11,7 +11,7 @@
       using SafeMath for uint256;
       using Strings for uint256;
     
-      uint256 public constant tokenPrice = 1900000000000000; // 0.0019 ETH 
+      uint256 public constant tokenPrice = 190000; // 0.0019 ETH 
       uint256 public constant maxTokenPurchase = 3;
       uint256 public constant MAX_TOKENS = 10000;
     
