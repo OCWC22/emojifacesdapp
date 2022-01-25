@@ -14,12 +14,16 @@ const Header = () => {
     setStatus(walletResponse.status);
   };
 
-  useEffect(async () => {
-    const walletResponse = await getCurrentWalletConnected();
-    setWalletAddress(walletResponse.address);
-    setStatus(walletResponse.status);
+  useEffect(() => {
+    const prepare = async () => {
+      const walletResponse = await getCurrentWalletConnected();
+      setWalletAddress(walletResponse.address);
+      setStatus(walletResponse.status);
 
-    addWalletListener();
+      addWalletListener();
+    };
+
+    prepare();
   }, []);
 
   const addWalletListener = () => {
@@ -101,7 +105,7 @@ const Header = () => {
           <nav aria-label="Contact Menu">
             <ul className="flex items-center space-x-6">
               <li>
-                <a href="https://opensea.io" target="_blank">
+                <a href="https://opensea.io" target="_blank" rel="noreferrer">
                   <svg
                     className="w-7 h-7"
                     viewBox="0 0 90 90"
@@ -117,7 +121,11 @@ const Header = () => {
               </li>
 
               <li>
-                <a href="https://twitter.com/DidemKkkaraasl1" target="_blank">
+                <a
+                  href="https://twitter.com/DidemKkkaraasl1"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <svg
                     className="w-7 h-7"
                     stroke="currentColor"
@@ -132,7 +140,11 @@ const Header = () => {
               </li>
 
               <li>
-                <a href="https://discord.gg/rAFdkCwn" target="_blank">
+                <a
+                  href="https://discord.gg/rAFdkCwn"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <svg
                     className="w-7 h-7"
                     stroke="currentColor"
